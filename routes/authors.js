@@ -6,7 +6,7 @@ const router = express.Router()
 router.get('/', async (req, res) => {
     let searchOptions = {}
     if (req.query.name != null && req.query.name !== '') {
-        searchOptions.name = new RegExp(req.query.name, 'i')
+        searchOptions.name = new RegExp(req.query.name, "i")
     }
     try {
         const authors = await Author.find(searchOptions)
@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
             searchOptions: req.query
         })
     } catch {
-        res.render('/')
+        res.render('/')   
     } 
 })
 
